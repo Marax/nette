@@ -327,8 +327,7 @@ use Nette;
 
 <script id="nette-debug-script">
 /* <![CDATA[ */
-<?php require __DIR__ . '/netteQ.js' ?>
-<?php require __DIR__ . '/bar.js' ?>
+<?php require __DIR__ . '/compiled.js' ?>
 /* ]]> */
 </script>
 
@@ -369,7 +368,7 @@ use Nette;
 		debug.innerHTML = <?php echo json_encode(Nette\Utils\Strings::fixEncoding($output)) ?>;
 		for (var i = 0, scripts = debug.getElementsByTagName('script'); i < scripts.length; i++) eval(scripts[i].innerHTML);
 		(new Nette.Debug.Bar).init();
-		Nette.Q.factory(debug).show();
+		Nette.Query.factory(debug).show();
 	};
 })(window.onload);
 </script>
